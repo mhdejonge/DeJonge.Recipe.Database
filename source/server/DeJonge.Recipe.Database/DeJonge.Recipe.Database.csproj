@@ -4,5 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DeJonge.Recipe.Database.Domain\DeJonge.Recipe.Database.Domain.csproj" />
+  </ItemGroup>
+
 
 </Project>
