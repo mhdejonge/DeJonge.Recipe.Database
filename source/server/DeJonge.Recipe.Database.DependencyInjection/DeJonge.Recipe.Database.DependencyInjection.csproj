@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SimpleInjector.Integration.AspNetCore.Mvc" Version="4.10.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DeJonge.Recipe.Database.Infrastructure\DeJonge.Recipe.Database.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -7,7 +7,7 @@
     {
         public static IMongoCollection<TDocument> GetCollection<TDocument>(this IMongoDatabase database)
         {
-            return database.GetCollection<TDocument>(new Pluralizer().Pluralize(typeof(TDocument).Name));
+            return database.GetCollection<TDocument>(new Pluralizer().Pluralize(typeof(TDocument).Name).ToLower());
         }
     }
 }
