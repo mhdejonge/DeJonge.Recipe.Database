@@ -1,8 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.10.3" />
+    <PackageReference Include="Pluralize.NET" Version="1.0.2" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DeJonge.Recipe.Database.Domain\DeJonge.Recipe.Database.Domain.csproj" />

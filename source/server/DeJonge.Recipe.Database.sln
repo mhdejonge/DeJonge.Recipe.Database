@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeJonge.Recipe.Database", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeJonge.Recipe.Database.Domain", "DeJonge.Recipe.Database.Domain\DeJonge.Recipe.Database.Domain.csproj", "{5D852450-904F-4E1D-9494-EC905A883463}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeJonge.Recipe.Database.Infrastructure", "DeJonge.Recipe.Database.Infrastructure\DeJonge.Recipe.Database.Infrastructure.csproj", "{9CA859AF-49F8-4546-B359-2EBB69C5D442}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{5D852450-904F-4E1D-9494-EC905A883463}.Release|x64.Build.0 = Release|Any CPU
 		{5D852450-904F-4E1D-9494-EC905A883463}.Release|x86.ActiveCfg = Release|Any CPU
 		{5D852450-904F-4E1D-9494-EC905A883463}.Release|x86.Build.0 = Release|Any CPU
+		{9CA859AF-49F8-4546-B359-2EBB69C5D442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CA859AF-49F8-4546-B359-2EBB69C5D442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CA859AF-49F8-4546-B359-2EBB69C5D442}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9CA859AF-49F8-4546-B359-2EBB69C5D442}.Debug|x64.Build.0 = Debug|Any CPU
+		{9CA859AF-49F8-4546-B359-2EBB69C5D442}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9CA859AF-49F8-4546-B359-2EBB69C5D442}.Debug|x86.Build.0 = Debug|Any CPU
+		{9CA859AF-49F8-4546-B359-2EBB69C5D442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CA859AF-49F8-4546-B359-2EBB69C5D442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CA859AF-49F8-4546-B359-2EBB69C5D442}.Release|x64.ActiveCfg = Release|Any CPU
+		{9CA859AF-49F8-4546-B359-2EBB69C5D442}.Release|x64.Build.0 = Release|Any CPU
+		{9CA859AF-49F8-4546-B359-2EBB69C5D442}.Release|x86.ActiveCfg = Release|Any CPU
+		{9CA859AF-49F8-4546-B359-2EBB69C5D442}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
