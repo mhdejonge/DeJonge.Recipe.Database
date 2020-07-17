@@ -19,7 +19,7 @@
 
         private IMongoCollection<Recipe> Recipes { get; }
 
-        public async Task<Recipe> Get(ObjectId recipe)
+        public async Task<Recipe?> Get(ObjectId recipe)
         {
             return await Recipes.Find(FindById(recipe)).SingleOrDefaultAsync();
         }

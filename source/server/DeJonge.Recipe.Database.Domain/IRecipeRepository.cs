@@ -8,7 +8,7 @@
 
     public interface IRecipeRepository
     {
-        Task<Recipe> Get(ObjectId recipe);
+        Task<Recipe?> Get(ObjectId recipe);
 
         Task<List<Recipe>> Get(params Expression<Func<Recipe, object>>[] fields);
 

@@ -18,25 +18,28 @@
         }
 
         [HttpGet(Routes.Id)]
-        public async Task<ActionResult<List<Recipe>>> Get([FromRoute] string id = null)
+        public async Task<ActionResult<List<Recipe>>> Get()
         {
-            if (string.IsNullOrEmpty(id))
+            return await _recipes.Get(recipe => recipe.Name);
+        }
+
+        [HttpGet(Routes.Id)]
+        public async Task<ActionResult<Recipe>> Get([FromRoute] string id)
+        {
+            if (!ObjectId.TryParse(id, out var recipeId))
             {
-                return await _recipes.Get(recipe => recipe.Name);
+                return BadRequest();
             }
-            if (ObjectId.TryParse(id, out var recipeId))
+            var recipe = await _recipes.Get(recipeId);
+            if (recipe != null)
             {
-                var recipe = _recipes.Get(recipeId);
-                if (recipe != null)
-                {
-                    return Ok(recipe);
-                }
+                return recipe;
             }
             return NotFound();
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] Recipe recipe)
+        public async Task<ActionResult> Post([FromBody] Recipe? recipe)
         {
             if (recipe == null)
             {
@@ -47,7 +50,7 @@
         }
 
         [HttpPut]
-        public async Task<ActionResult> Put([FromBody] Recipe recipe)
+        public async Task<ActionResult> Put([FromBody] Recipe? recipe)
         {
             if (recipe == null)
             {
@@ -58,7 +61,7 @@
         }
 
         [HttpDelete]
-        public async Task<ActionResult> Delete([FromQuery] string id = null)
+        public async Task<ActionResult> Delete([FromQuery] string? id = null)
         {
             if (ObjectId.TryParse(id, out var recipeId))
             {

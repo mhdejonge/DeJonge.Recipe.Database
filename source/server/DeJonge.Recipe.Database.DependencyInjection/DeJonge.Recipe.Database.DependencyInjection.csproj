@@ -2,10 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SimpleInjector.Integration.AspNetCore.Mvc" Version="4.10.3" />
+    <PackageReference Include="SimpleInjector.Integration.AspNetCore.Mvc" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
