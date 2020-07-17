@@ -1,5 +1,6 @@
 ﻿namespace DeJonge.Recipe.Database.DependencyInjection
 {
+    using System;
     using System.Linq;
     using DeJonge.Recipe.Database.Domain;
     using DeJonge.Recipe.Database.Infrastructure;
@@ -13,7 +14,7 @@
         {
             services.AddSimpleInjector(container, options => options.AddAspNetCore().AddControllerActivation());
             container.RegisterDatabase(appSettings);
-            container.RegisterApplicationTypes();
+            container.RegisterRepositories();
         }
 
         private static void RegisterDatabase(this Container container, AppSettings appSettings)
@@ -24,16 +25,24 @@
             container.RegisterInstance(database);
         }
 
-        private static void RegisterApplicationTypes(this Container container)
+        private static void RegisterRepositories(this Container container)
         {
             var services = from type in typeof(RecipeRepository).Assembly.GetExportedTypes()
                            where type.IsClass && !type.IsAbstract && type.GetInterfaces().Any()
-                           let service = type.GetInterfaces().Single()
-                           select (type, service);
-            foreach (var (type, service) in services)
+                           select type;
+            foreach (var implementationType in services)
             {
-                container.Register(service, type, Lifestyle.Singleton);
+                container.Register(implementationType.ServiceType(), implementationType, Lifestyle.Singleton);
             }
+        }
+
+        private static Type ServiceType(this Type implementationType)
+        {
+            var allInterfaces = implementationType.GetInterfaces();
+            var inheritedInterfaces = allInterfaces.SelectMany(service => service.GetInterfaces());
+            var baseTypeInterfaces = implementationType.BaseType?.GetInterfaces() ?? Enumerable.Empty<Type>();
+            var directInterfaces = allInterfaces.Except(inheritedInterfaces).Except(baseTypeInterfaces);
+            return directInterfaces.Single();
         }
     }
 }
