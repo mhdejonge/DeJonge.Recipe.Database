@@ -24,9 +24,11 @@
             return await Recipes.Find(FindById(recipe)).SingleOrDefaultAsync();
         }
 
-        public async Task<List<Recipe>> Get(params Expression<Func<Recipe, object>>[] fields)
+        public async Task<List<Recipe>> Get(string? search, params Expression<Func<Recipe, object>>[] fields)
         {
-            return await Recipes.Find(Filter.Empty).Project(Projection.Combine(fields.Select(Projection.Include))).As<Recipe>().ToListAsync();
+            var filter = string.IsNullOrEmpty(search) ? Filter.Empty : Filter.Text(search);
+            var projection = Projection.Combine(fields.Select(Projection.Include));
+            return await Recipes.Find(filter).Project(projection).As<Recipe>().ToListAsync();
         }
 
         public async Task Insert(Recipe recipe)
@@ -47,6 +49,12 @@
         private static FilterDefinition<Recipe> FindById(ObjectId recipe)
         {
             return Filter.Eq(document => document.Id, recipe);
+        }
+
+        public async Task CreateIndexes()
+        {
+            var definition = IndexKeys.Text(recipe => recipe.Name).Text(recipe => recipe.Tags);
+            await Recipes.Indexes.CreateOneAsync(new CreateIndexModel<Recipe>(definition));
         }
     }
 }

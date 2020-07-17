@@ -17,10 +17,10 @@
             _recipes = recipes;
         }
 
-        [HttpGet(Routes.Id)]
-        public async Task<ActionResult<List<Recipe>>> Get()
+        [HttpGet]
+        public async Task<ActionResult<List<Recipe>>> Find([FromQuery] string? search)
         {
-            return await _recipes.Get(recipe => recipe.Name);
+            return await _recipes.Get(search, recipe => recipe.Name);
         }
 
         [HttpGet(Routes.Id)]

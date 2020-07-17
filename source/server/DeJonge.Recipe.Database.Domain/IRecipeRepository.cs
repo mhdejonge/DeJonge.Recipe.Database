@@ -10,12 +10,14 @@
     {
         Task<Recipe?> Get(ObjectId recipe);
 
-        Task<List<Recipe>> Get(params Expression<Func<Recipe, object>>[] fields);
+        Task<List<Recipe>> Get(string? search, params Expression<Func<Recipe, object>>[] fields);
 
         Task Insert(Recipe recipe);
 
         Task Update(Recipe recipe);
 
         Task Delete(ObjectId recipe);
+
+        Task CreateIndexes();
     }
 }
