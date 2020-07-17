@@ -2,8 +2,8 @@
 {
     public class Ingredient
     {
-        public string Quantity { get; set; }
+        public string Quantity { get; set; } = null!;
 
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
     }
 }

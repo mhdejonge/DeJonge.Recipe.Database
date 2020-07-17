@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeJonge.Recipe.Database", "DeJonge.Recipe.Database\DeJonge.Recipe.Database.csproj", "{09EC9718-1190-44FE-9E14-B4874081F2DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeJonge.Recipe.Database", "DeJonge.Recipe.Database\DeJonge.Recipe.Database.csproj", "{09EC9718-1190-44FE-9E14-B4874081F2DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeJonge.Recipe.Database.Domain", "DeJonge.Recipe.Database.Domain\DeJonge.Recipe.Database.Domain.csproj", "{5D852450-904F-4E1D-9494-EC905A883463}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeJonge.Recipe.Database.Domain", "DeJonge.Recipe.Database.Domain\DeJonge.Recipe.Database.Domain.csproj", "{5D852450-904F-4E1D-9494-EC905A883463}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeJonge.Recipe.Database.Infrastructure", "DeJonge.Recipe.Database.Infrastructure\DeJonge.Recipe.Database.Infrastructure.csproj", "{9CA859AF-49F8-4546-B359-2EBB69C5D442}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeJonge.Recipe.Database.Infrastructure", "DeJonge.Recipe.Database.Infrastructure\DeJonge.Recipe.Database.Infrastructure.csproj", "{9CA859AF-49F8-4546-B359-2EBB69C5D442}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeJonge.Recipe.Database.DependencyInjection", "DeJonge.Recipe.Database.DependencyInjection\DeJonge.Recipe.Database.DependencyInjection.csproj", "{803F9B81-F1B6-4D43-9893-10791F11FB3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeJonge.Recipe.Database.DependencyInjection", "DeJonge.Recipe.Database.DependencyInjection\DeJonge.Recipe.Database.DependencyInjection.csproj", "{803F9B81-F1B6-4D43-9893-10791F11FB3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{09EC9718-1190-44FE-9E14-B4874081F2DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -72,5 +69,11 @@ Global
 		{803F9B81-F1B6-4D43-9893-10791F11FB3C}.Release|x64.Build.0 = Release|Any CPU
 		{803F9B81-F1B6-4D43-9893-10791F11FB3C}.Release|x86.ActiveCfg = Release|Any CPU
 		{803F9B81-F1B6-4D43-9893-10791F11FB3C}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72110513-DE78-4512-8B47-B4CF8FFFAEB9}
 	EndGlobalSection
 EndGlobal

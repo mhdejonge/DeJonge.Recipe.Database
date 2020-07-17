@@ -2,6 +2,6 @@
 {
     public class AppSettings
     {
-        public string ConnectionUrl { get; set; }
+        public string ConnectionUrl { get; set; } = null!;
     }
 }

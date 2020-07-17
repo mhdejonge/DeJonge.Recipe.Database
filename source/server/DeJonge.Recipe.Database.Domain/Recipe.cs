@@ -7,10 +7,10 @@
     {
         public ObjectId Id { get; set; }
 
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
 
-        public List<Ingredient> Ingredients { get; set; }
+        public List<Ingredient> Ingredients { get; set; } = null!;
 
-        public List<string> Instructions { get; set; }
+        public List<string> Instructions { get; set; } = null!;
     }
 }
