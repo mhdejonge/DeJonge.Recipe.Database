@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { CheckType } from 'src/app/check-type';
+import { CheckType } from 'src/app/helpers';
+import { UriBuilder } from 'uribuilder';
 
 type PathVariables = string | string[];
 type QueryParameters = { [name: string]: string | string[] };
@@ -35,15 +36,14 @@ export class ApiClient {
     return this.api.patch<T>(this.buildUri(route, path), data, { params });
   }
 
-  private buildUri(route: string, path: PathVariables | unknown) {
-    route = this.trimTrailingSlash(route);
-    let pathVariables = '';
+  private buildUri(route: string, path: PathVariables | unknown): string {
+    const builder = UriBuilder.parse(this.baseUri);
     if (CheckType.string(path)) {
-      pathVariables = path;
+      builder.pathSegments = [route, path];
     } else if (Array.isArray(path)) {
-      pathVariables = path.join('/');
+      builder.pathSegments = [route, ...path];
     }
-    return `${this.api}/${route}/${pathVariables}`;
+    return builder.toString();
   }
 
   private trimTrailingSlash(value: string): string {
