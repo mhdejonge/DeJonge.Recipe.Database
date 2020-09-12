@@ -58,7 +58,7 @@
         ]
       }
     ],
-    "no-consecutive-blank-lines": false,
+    "no-consecutive-blank-lines": true,
     "no-console": [
       true,
       "debug",
@@ -130,8 +130,8 @@
       ]
     },
     "use-lifecycle-interface": true,
-    "use-pipe-transform-interface": true
-  ,    "variable-name": {
+    "use-pipe-transform-interface": true,
+    "variable-name": {
       "options": [
         "ban-keywords",
         "check-format",
@@ -148,7 +148,7 @@
         "check-typecast"
       ]
     }
-},
+  },
   "rulesDirectory": [
     "codelyzer"
   ]
