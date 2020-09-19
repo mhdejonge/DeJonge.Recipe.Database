@@ -61,7 +61,7 @@
         }
 
         [HttpDelete]
-        public async Task<ActionResult> Delete([FromQuery] string? id = null)
+        public async Task<ActionResult> Delete([FromQuery] string? id)
         {
             if (ObjectId.TryParse(id, out var recipeId))
             {

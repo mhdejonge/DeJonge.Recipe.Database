@@ -22,6 +22,9 @@
         public List<string>? Tags { get; set; }
 
         [BsonIgnoreIfDefault]
+        public string? Makes { get; set; }
+
+        [BsonIgnoreIfDefault]
         public string? Source { get; set; }
     }
 }
